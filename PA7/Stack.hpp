@@ -23,7 +23,7 @@ public:
 	void push(string Date) {
 
 		//inserting
-	}
+	} 
 
 	string peek(void) {
 
