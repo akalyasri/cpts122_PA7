@@ -54,6 +54,12 @@ public:
 
 	} 
 
+	int vecSize(void) {
+
+		return dates.size();
+	}
+
+
 private:
 
 	vector<string> dates;
