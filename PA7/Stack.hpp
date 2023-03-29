@@ -20,17 +20,39 @@ using std::vector;
 class Stack {
 public:
 
-	void push(string Date) {
+	void push(string dateInput) {
 
 		//inserting
+
+		dates.push_back(dateInput); // insert at back of the vector
+
 	} 
 
 	string peek(void) {
 
-		//get top of stack without deleting
+		//get top of stack without deleting - the top is now the back of a vector
+
+		return dates.back();
+
 	}
 
-	bool isEmpty(void)
+	string pop(void) {
+		
+		// deleteing pTop from stack and returning
+
+		dates.pop_back(); //removes the last element of a stack
+
+		// dates.erase(dates.begin()); // removes the first element of a stack
+
+	}
+
+	bool isEmpty(void) {
+
+		//return true for empty stack
+
+		return dates.empty();
+
+	} 
 
 private:
 
