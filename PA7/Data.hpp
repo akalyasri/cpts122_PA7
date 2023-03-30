@@ -1,4 +1,9 @@
 #include "Stack.hpp"
+//#include "List.hpp"
+
+
+//template<typename T>
+//class List;
 
 
 class Data {
@@ -103,7 +108,25 @@ public:
 	}
 
 	
-	
+	// setter & getter
+
+	/*void setID(int idInput) {
+		ID = idInput;
+	}
+
+	int getID(void) {
+		return ID;
+	}
+
+	void setName(string nameInput) {
+		name = nameInput;
+	}
+
+	string getName(void) {
+		return name;
+	}*/
+
+
 
 
 
@@ -118,7 +141,10 @@ private:
 	int numOfAbsences;
 	
 	Stack AbsenceDates;
-
 	
+	//template <typename T>
+	//friend class List;
+
+
 
 };

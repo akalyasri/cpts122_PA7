@@ -5,7 +5,7 @@
 int main(void) {
 
 
-	List<Data> absentLists;
+	//List<Data> absentLists;
 
 	
 

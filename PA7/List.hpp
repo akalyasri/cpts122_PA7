@@ -14,7 +14,7 @@ public:
 
 		Node<T>* newNode;
 
-		newNode = new Node;
+		newNode = new Node<T>;
 
 		if (newNode == nullptr) {
 			return false;
@@ -40,6 +40,16 @@ public:
 
 	bool search(int idInput, Node<T> * matchingNode) {
 
+		Node<T>* pCur = pHead;
+
+		while (pCur != nullptr) {
+
+			if (pCur->Data.ID) {
+
+			}
+
+		}
+
 
 	}
 
@@ -49,7 +59,6 @@ public:
 
 private:
 
-	Node <T> * pHead;
+	Node<T> * pHead;
 	
-
 };

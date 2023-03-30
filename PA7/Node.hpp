@@ -18,6 +18,10 @@ class Node {
 
 public:
 
+	Node() {
+		pNext = nullptr;
+	}
+
 	Node<T>* getpNext(void) {
 		return pNext;
 	}
@@ -26,12 +30,20 @@ public:
 		pNext = newNode;
 	}
 
+	T* getData(void) {
+
+		return &Data;
+
+	}
+
 
 private:
 
 	Node <T> * pNext; 
 
 	T Data;
+
+	//friend class List<T>;
 	
 };
 
