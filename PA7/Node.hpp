@@ -18,9 +18,18 @@ class Node {
 
 public:
 
+	Node<T>* getpNext(void) {
+		return pNext;
+	}
+
+	void setpNext(Node<T>* newNode) {
+		pNext = newNode;
+	}
+
+
 private:
 
-	Node* <T> pNext; 
+	Node <T> * pNext; 
 
 	T Data;
 	
