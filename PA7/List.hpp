@@ -44,7 +44,7 @@ public:
 
 		while (pCur != nullptr) {
 
-			if (pCur->Data.ID) {
+			if (pCur->Data.name) {
 
 			}
 

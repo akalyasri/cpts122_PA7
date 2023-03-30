@@ -55,7 +55,7 @@ public:
 
 	} 
 
-	int vecSize(void) {
+	size_t vecSize(void) {
 
 		return dates.size();
 	}
