@@ -25,7 +25,7 @@ public:
 	Node(int recordNumInput, int idInput, string& nameInput, string& emailInput, int creditInput, string& programInput, string& levelInput, int absenceNum, string& dateOfAbsence) {
 
 		// TBD
-
+		
 
 	}
 

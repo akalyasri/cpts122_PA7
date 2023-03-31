@@ -2,8 +2,9 @@
 //#include "List.hpp"
 
 
-//template<typename T>
-//class List;
+
+template<typename T>
+class Node;
 
 
 class Data {
@@ -194,6 +195,9 @@ private:
 	//friend class List;
 
 	friend class Menu;
+
+	template <typename T>
+	friend class Node;
 
 
 
