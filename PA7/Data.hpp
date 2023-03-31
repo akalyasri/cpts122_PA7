@@ -117,7 +117,7 @@ public:
 
 	// setter & getter      
 	//int getRecordNum(void) {
-	//	return recordNum;
+	//	return recordNum;	
 	//}
 
 	//void setID(int newID) {

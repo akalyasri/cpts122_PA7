@@ -31,7 +31,7 @@ public:
 
 		singleData.email = emailInput;
 
-		singleData.credits = creditInput;
+		singleData.credits = creditInput; 
 		
 		singleData.program = programInput; 
 
