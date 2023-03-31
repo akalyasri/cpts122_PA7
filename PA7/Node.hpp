@@ -33,6 +33,17 @@ public:
 
 		singleData.credits = creditInput;
 		
+		singleData.program = programInput; 
+
+		singleData.level = levelInput;
+
+		singleData.numOfAbsences = absenceNum;
+
+		singleData.AbsenceDates.push(dateOfAbsence);
+
+		// singleData.AbsenceDates.push(dateOfAbsence); for testing
+
+
 	}
 
 	Node<T>* getpNext(void) {

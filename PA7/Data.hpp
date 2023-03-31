@@ -113,8 +113,9 @@ public:
 	}
 
 	
-	// setter & getter
+	//							nvm using friend function for code simplicity
 
+	// setter & getter      
 	//int getRecordNum(void) {
 	//	return recordNum;
 	//}
