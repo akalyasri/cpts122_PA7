@@ -3,6 +3,7 @@
 #include <fstream>
 #include <string>
 
+
 using std::cin;
 using std::cout;
 
@@ -24,9 +25,14 @@ public:
 
 	Node(int recordNumInput, int idInput, string& nameInput, string& emailInput, int creditInput, string& programInput, string& levelInput, int absenceNum, string& dateOfAbsence) {
 
-		// TBD
-		
+		singleData.recordNum = recordNumInput;
 
+		singleData.name = nameInput;
+
+		singleData.email = emailInput;
+
+		singleData.credits = creditInput;
+		
 	}
 
 	Node<T>* getpNext(void) {
@@ -39,7 +45,7 @@ public:
 
 	T* getData(void) {
 
-		return &Data;
+		return &singleData;
 
 	}
 
@@ -48,7 +54,7 @@ private:
 
 	Node <T> * pNext; 
 
-	T Data;
+	Data singleData;
 
 	//friend class List<T>;
 	

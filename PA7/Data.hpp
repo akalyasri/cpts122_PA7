@@ -115,65 +115,65 @@ public:
 	
 	// setter & getter
 
-	int getRecordNum(void) {
-		return recordNum;
-	}
+	//int getRecordNum(void) {
+	//	return recordNum;
+	//}
 
-	void setID(int newID) {
-		ID = newID;
-	}
+	//void setID(int newID) {
+	//	ID = newID;
+	//}
 
-	int getID(void) {
-		return ID;
-	}
+	//int getID(void) {
+	//	return ID;
+	//}
 
-	void setName(string newName) {
-		name = newName;
-	}
+	//void setName(string newName) {
+	//	name = newName;
+	//}
 
-	string getName(void) {
-		return name;
-	}
+	//string getName(void) {
+	//	return name;
+	//}
 
-	void setEmail(string newEmail) {
-		email = newEmail;
-	}
+	//void setEmail(string newEmail) {
+	//	email = newEmail;
+	//}
 
-	string getEmail(void) {
-		return email;
-	}
+	//string getEmail(void) {
+	//	return email;
+	//}
 
-	void setCredits(int newCredits) {
-		credits = newCredits;
-	}
+	//void setCredits(int newCredits) {
+	//	credits = newCredits;
+	//}
 
-	int getCredits(void) {
-		return credits;
-	}
+	//int getCredits(void) {
+	//	return credits;
+	//}
 
-	void setProgram(string newProgram) {
-		program = newProgram;
-	}
+	//void setProgram(string newProgram) {
+	//	program = newProgram;
+	//}
 
-	string getProgram(void) {
-		return program;
-	}
+	//string getProgram(void) {
+	//	return program;
+	//}
 
-	void setLevel(string newLevel) {
-		level = newLevel;
-	}
+	//void setLevel(string newLevel) {
+	//	level = newLevel;
+	//}
 
-	string getLevel(void) {
-		return level;
-	}
+	//string getLevel(void) {
+	//	return level;
+	//}
 
-	void setNumAbsences(int newNum) {
-		numOfAbsences = newNum;
-	}
+	//void setNumAbsences(int newNum) {
+	//	numOfAbsences = newNum;
+	//}
 
-	int getNumAbsences(void) {
-		return numOfAbsences;
-	}
+	//int getNumAbsences(void) {
+	//	return numOfAbsences;
+	//}
 
 
 
