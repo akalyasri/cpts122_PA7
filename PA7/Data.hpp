@@ -10,8 +10,9 @@ class Data {
 
 public:
 
-	Data(int idInput, string& nameInput, string& emailInput, int creditInput, string& programInput, string& levelInput, int absenceNum, string& dateOfAbsence) {
+	Data(int recordNumInput, int idInput, string& nameInput, string& emailInput, int creditInput, string& programInput, string& levelInput, int absenceNum, string& dateOfAbsence) {
 
+		recordNum = recordNumInput;
 		ID = idInput;
 		name = nameInput;
 		email = emailInput;
@@ -24,6 +25,10 @@ public:
 
 	}
 
+	Data() {
+
+	}
+
 	~Data() {
 
 
@@ -32,17 +37,16 @@ public:
 
 	void markAbsence(void) { // use only when the user say yes to "is student absent today?"
 
-		//got code from online
+		//got the following 9 lines of code from online
 		auto now = std::chrono::system_clock::now();
 		std::time_t current_time = std::chrono::system_clock::to_time_t(now);
 		std::tm* time_info = std::localtime(&current_time);
-
 		int year = time_info->tm_year + 1900;
 		int month = time_info->tm_mon + 1;
 		int day = time_info->tm_mday;
-
 		std::stringstream date_stream;
 		date_stream << year << "-" << month << "-" << day;
+
 
 		string current_date = date_stream.str();
 
@@ -110,28 +114,72 @@ public:
 	
 	// setter & getter
 
-	/*void setID(int idInput) {
-		ID = idInput;
+	int getRecordNum(void) {
+		return recordNum;
+	}
+
+	void setID(int newID) {
+		ID = newID;
 	}
 
 	int getID(void) {
 		return ID;
 	}
 
-	void setName(string nameInput) {
-		name = nameInput;
+	void setName(string newName) {
+		name = newName;
 	}
 
 	string getName(void) {
 		return name;
-	}*/
+	}
 
+	void setEmail(string newEmail) {
+		email = newEmail;
+	}
+
+	string getEmail(void) {
+		return email;
+	}
+
+	void setCredits(int newCredits) {
+		credits = newCredits;
+	}
+
+	int getCredits(void) {
+		return credits;
+	}
+
+	void setProgram(string newProgram) {
+		program = newProgram;
+	}
+
+	string getProgram(void) {
+		return program;
+	}
+
+	void setLevel(string newLevel) {
+		level = newLevel;
+	}
+
+	string getLevel(void) {
+		return level;
+	}
+
+	void setNumAbsences(int newNum) {
+		numOfAbsences = newNum;
+	}
+
+	int getNumAbsences(void) {
+		return numOfAbsences;
+	}
 
 
 
 
 private:
 
+	int recordNum;
 	int ID;
 	string name;
 	string email;
@@ -144,6 +192,8 @@ private:
 	
 	//template <typename T>
 	//friend class List;
+
+	friend class Menu;
 
 
 
