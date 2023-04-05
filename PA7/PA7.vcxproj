@@ -134,6 +134,7 @@
     <ClInclude Include="List.hpp" />
     <ClInclude Include="Menu.hpp" />
     <ClInclude Include="Node.hpp" />
+    <ClInclude Include="Record.hpp" />
     <ClInclude Include="Stack.hpp" />
   </ItemGroup>
   <ItemGroup>
