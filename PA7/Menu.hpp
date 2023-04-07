@@ -10,6 +10,8 @@ public:
 
 	void readCourseList(void) {
 
+		List<Data> absentLists;
+
 		clFile.open("classList.csv");
 
 		string line;
@@ -18,10 +20,13 @@ public:
 
 		while (getline(clFile, line)) {
 
-			string token;
+			string temp;	
 			stringstream ss(line);
 
-			while (getline(ss, token, ',')) {
+			while (getline(ss, temp, ',')) {
+
+
+
 
 
 			}
