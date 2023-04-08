@@ -16,7 +16,7 @@ public:
 
 		Node<T>* newNode;
 
-		newNode = new Node<T>(recordNumInput,idInput,firstNameInput,lastNameInput,emailInput,creditInput,programInput,levelInput,absenceNum,dateOfAbsence);
+		newNode = new Node<T>(recordNumInput,idInput,firstNameInput,lastNameInput,emailInput,creditInput,programInput,levelInput, absenceNum, dateOfAbsence);
 
 		if (newNode == nullptr) {
 			return false;

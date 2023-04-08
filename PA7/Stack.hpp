@@ -61,6 +61,10 @@ public:
 		return dates.size();
 	}
 
+	vector<string> getDates(void) {
+		return dates;
+	}
+
 
 private:
 

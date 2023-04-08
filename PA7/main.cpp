@@ -39,7 +39,7 @@ int main(void) {
 	Menu App;
 
 	App.readCourseList();
-
+	App.storeMasterList();
 
 }
 

@@ -48,6 +48,7 @@ public:
 
 	}
 
+
 	Node<T>* getpNext(void) {
 		return pNext;
 	}

@@ -2,7 +2,7 @@
 //#include "Data.hpp"
 using std::getline;
 using std::stringstream;
-
+using std::endl;
 
 class Menu {
 
@@ -13,6 +13,9 @@ public:
 	}
 
 	~Menu() {
+
+		clFile.close();
+		mFile.close();
 
 	}
 
@@ -34,6 +37,9 @@ public:
 		string creditInput;
 		string programInput;
 		string levelInput;
+		string absentDate;
+
+		int numofAbsences;
 
 
 		while (getline(clFile, line)) {
@@ -59,7 +65,7 @@ public:
 
 				case 2: 
 					//last name
-					temp = temp.substr(1,temp.length());
+					temp = temp.substr(1,temp.length());    //substr(position, up to how long you want)
 					lastNameInput = temp;
 					break;
 
@@ -102,8 +108,14 @@ public:
 				string& creditRef = creditInput;
 				string& programRef = programInput;
 				string& levelRef = levelInput;
+				string& dateRef = absentDate;
+
 
 				fieldIndex++;
+
+				if (fieldIndex == 8) {
+					absentLists.insertNode(recordNumInput, idInput, firstNameRef, lastNameRef, emailRef, creditRef, programRef, levelRef,numofAbsences = 0,dateRef = "");
+				}
 
 			}
 
@@ -125,8 +137,43 @@ public:
 
 	}
 
+	
+	void storeMasterList(void) {
+
+		mFile.open("master.csv", std::ios::out);
 
 
+		Node<Data>* pCur = absentLists.pHead;
+
+		while (pCur != nullptr) {
+
+
+			mFile << pCur->getData()->recordNum << ","
+				<< pCur->getData()->ID << ","
+				<< "\"" << pCur->getData()->lastName << ","
+				<< pCur->getData()->firstName << "\"" << ","
+				<< pCur->getData()->email << ","
+				<< pCur->getData()->credits << ","
+				<< pCur->getData()->program << ","
+				<< pCur->getData()->level << ","
+				<< pCur->getData()->numOfAbsences;
+
+				// iterate through the vector
+
+			for (auto dates : pCur->getData()->AbsenceDates.getDates()) {
+				if (dates != "") {
+					mFile << "," << dates;
+				}
+			}
+
+			mFile << endl;
+
+
+			pCur = pCur->getpNext();
+		}
+
+
+	}
 
 
 
@@ -134,6 +181,7 @@ private:
 
 	List<Data> absentLists;
 	fstream clFile;
+	fstream mFile;
 
 };
 
