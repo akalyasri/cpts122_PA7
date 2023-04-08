@@ -1,12 +1,14 @@
 #include "Data.hpp"
 #include "List.hpp"
-
+#include "Menu.hpp"
 
 int main(void) {
 
-	//int recordNumInput, int idInput, string& nameInput, string& emailInput, int creditInput, string& programInput, string& levelInput, int absenceNum, string& dateOfAbsence
-	List<Data> absentLists;
+	//int recordNumInput, int idInput, string& nameInput, string& emailInput, string creditInput, string& programInput, string& levelInput, int absenceNum, string& dateOfAbsence
+	//List<Data> absentLists;
 
+	
+	/*
 	int recordNumInput = 1; 
 	int idInput = 032;
 
@@ -16,7 +18,8 @@ int main(void) {
 	string emailInput = "akalya@gmail.com";
 	string& emailRef = emailInput;
 
-	int creditInput = 4;
+	string creditInput = "4";
+	string& creditRef = creditInput;
 
 	string programInput = "CPTS";
 	string& programRef = programInput;
@@ -30,11 +33,12 @@ int main(void) {
 	string& dateRef = dateOfAbsence;
 
 	absentLists.insertNode(recordNumInput,idInput,nameRef,emailRef,creditInput,programRef,levelRef,absenceNum,dateRef);
-	 
-	 
 
-	
+	*/
 
+	Menu App;
+
+	App.readCourseList();
 
 
 }

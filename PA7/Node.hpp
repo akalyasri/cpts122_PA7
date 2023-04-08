@@ -23,11 +23,13 @@ public:
 		pNext = nullptr;
 	}
 
-	Node(int recordNumInput, int idInput, string& nameInput, string& emailInput, int creditInput, string& programInput, string& levelInput, int absenceNum, string& dateOfAbsence) {
+	Node(int recordNumInput, int idInput, string& firstNameInput, string& lastNameInput, string& emailInput, string& creditInput, string& programInput, string& levelInput, int absenceNum, string& dateOfAbsence) {
 
 		singleData.recordNum = recordNumInput;
 
-		singleData.name = nameInput;
+		singleData.firstName = firstNameInput;
+
+		singleData.lastName = lastNameInput;
 
 		singleData.email = emailInput;
 

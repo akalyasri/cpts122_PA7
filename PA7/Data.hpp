@@ -11,11 +11,12 @@ class Data {
 
 public:
 
-	Data(int recordNumInput, int idInput, string& nameInput, string& emailInput, int creditInput, string& programInput, string& levelInput, int absenceNum, string& dateOfAbsence) {
+	Data(int recordNumInput, int idInput, string& firstNameInput, string&lastNameInput, string& emailInput, string& creditInput, string& programInput, string& levelInput, int absenceNum, string& dateOfAbsence) {
 
 		recordNum = recordNumInput;
 		ID = idInput;
-		name = nameInput;
+		firstName = firstNameInput;
+		lastName = lastNameInput;
 		email = emailInput;
 		credits = creditInput;
 		program = programInput;
@@ -89,7 +90,7 @@ public:
 
 		for (int i = 0; i < AbsenceDates.vecSize(); i++) {
 
-			if (name == nameInput) {
+			if (lastName == nameInput) {
 
 				// go through each absence date 
 
@@ -115,77 +116,79 @@ public:
 	
 	//							nvm using friend function for code simplicity
 
-	// setter & getter      
-	//int getRecordNum(void) {
-	//	return recordNum;	
-	//}
+	/*
+	 setter & getter      
+	int getRecordNum(void) {
+		return recordNum;	
+	}
 
-	//void setID(int newID) {
-	//	ID = newID;
-	//}
+	void setID(int newID) {
+		ID = newID;
+	}
 
-	//int getID(void) {
-	//	return ID;
-	//}
+	int getID(void) {
+		return ID;
+	}
 
-	//void setName(string newName) {
-	//	name = newName;
-	//}
+	void setName(string newName) {
+		name = newName;
+	}
 
-	//string getName(void) {
-	//	return name;
-	//}
+	string getName(void) {
+		return name;
+	}
 
-	//void setEmail(string newEmail) {
-	//	email = newEmail;
-	//}
+	void setEmail(string newEmail) {
+		email = newEmail;
+	}
 
-	//string getEmail(void) {
-	//	return email;
-	//}
+	string getEmail(void) {
+		return email;
+	}
 
-	//void setCredits(int newCredits) {
-	//	credits = newCredits;
-	//}
+	void setCredits(int newCredits) {
+		credits = newCredits;
+	}
 
-	//int getCredits(void) {
-	//	return credits;
-	//}
+	int getCredits(void) {
+		return credits;
+	}
 
-	//void setProgram(string newProgram) {
-	//	program = newProgram;
-	//}
+	void setProgram(string newProgram) {
+		program = newProgram;
+	}
 
-	//string getProgram(void) {
-	//	return program;
-	//}
+	string getProgram(void) {
+		return program;
+	}
 
-	//void setLevel(string newLevel) {
-	//	level = newLevel;
-	//}
+	void setLevel(string newLevel) {
+		level = newLevel;
+	}
 
-	//string getLevel(void) {
-	//	return level;
-	//}
+	string getLevel(void) {
+		return level;
+	}
 
-	//void setNumAbsences(int newNum) {
-	//	numOfAbsences = newNum;
-	//}
+	void setNumAbsences(int newNum) {
+		numOfAbsences = newNum;
+	}
 
-	//int getNumAbsences(void) {
-	//	return numOfAbsences;
-	//}
+	int getNumAbsences(void) {
+		return numOfAbsences;
+	}
 
-
+	*/
 
 
 private:
 
 	int recordNum;
 	int ID;
-	string name;
+	string firstName;
+	string lastName;
 	string email;
-	int credits;
+	string credits;
 	string program;
 	string level;
 	int numOfAbsences;
