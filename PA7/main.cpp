@@ -40,6 +40,8 @@ int main(void) {
 
 	App.readCourseList();
 	App.storeMasterList();
+	App.markAbsences();
+	
 
 }
 

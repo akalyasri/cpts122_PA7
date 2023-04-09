@@ -175,6 +175,43 @@ public:
 
 	}
 
+	void markAbsences(void) {
+
+		Node<Data>* pCur = absentLists.pHead;
+
+		//cout << "Student Names: " << endl << endl;
+
+		int userInput;
+
+		while (pCur != nullptr) {
+
+			//cout << pCur->getData()->firstName << " " << pCur->getData()->lastName << endl;
+
+			cout << "Was " << pCur->getData()->firstName << " " << pCur->getData()->lastName << " absent today?" << endl << endl;
+
+			cout << "Enter '1' for yes or '0' for no." << endl;
+
+			cin >> userInput;
+
+			if (userInput == 1) {
+
+				pCur->getData()->markAbsence();
+			} 
+			else if (userInput != 0 && userInput != 1) {
+
+				cout << "Invalid. Must enter either 0 or 1." << endl;
+				system("pause");
+			}
+
+			
+			system("cls");
+
+			pCur = pCur->getpNext();
+
+		}
+
+	}
+
 
 
 private:
