@@ -40,7 +40,8 @@ int main(void) {
 
 	App.readCourseList();
 	App.storeMasterList();
-	App.markAbsences();
+	//App.markAbsences();
+	App.generateReport();
 	
 
 }

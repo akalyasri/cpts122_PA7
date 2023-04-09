@@ -213,6 +213,71 @@ public:
 	}
 
 
+	void editAbsence(void) {
+		//BONUS
+
+	}
+
+	void generateReport(void) {
+
+		cout << "OPTIONS:" << endl << endl;
+		cout << "1. Generate report for all students" << endl;
+		cout << "2. Generate report for students with absences that match or exceed a certain number. " << endl << endl;
+
+		cout << "Enter a corresponding number (1 or 2)" << endl;
+
+		int userInput = 0;
+		int reportNum = 0;
+
+		Node<Data>* pCur = absentLists.pHead;
+
+		cin >> userInput;
+
+		switch (userInput) {
+		
+		case 1:
+
+			system("cls");
+
+			cout << "Most Recent Absence for Each Student: " << endl << endl;
+
+			while (pCur != nullptr) {
+				cout << pCur->getData()->firstName << " " << pCur->getData()->lastName << " : " << pCur->getData()->AbsenceDates.peek() << endl;
+
+				pCur = pCur->getpNext();
+			}
+
+			break;
+
+
+		case 2:
+
+			system("cls");
+
+			cout << "Enter a number to generate a report for students that match or exceed that number: " << endl;
+
+			cin >> reportNum;
+
+			while (pCur != nullptr) {
+
+				if (pCur->getData()->numOfAbsences >= reportNum) {
+
+					cout << pCur->getData()->firstName << " " << pCur->getData()->lastName << " : " << pCur->getData()->AbsenceDates.peek() << endl;
+
+				}
+				pCur = pCur->getpNext();
+			}
+			
+			break;
+		
+		default:
+			cout << "Invalid.Enter either 1 or 2." << endl;
+			break;
+		}
+
+	}
+
+
 
 private:
 
