@@ -12,11 +12,11 @@ public:
 	 
 
 	// for import records feature
-	bool insertNode(int recordNumInput, int idInput, string& firstNameInput,string& lastNameInput, string& emailInput, string& creditInput, string& programInput, string& levelInput, int absenceNum, string& dateOfAbsence) { // for import records feature
+	bool insertNode(int recordNumInput, int idInput, string& firstNameInput,string& lastNameInput, string& emailInput, string& creditInput, string& programInput, string& levelInput, int absenceNum) { // for import records feature
 
 		Node<T>* newNode;
 
-		newNode = new Node<T>(recordNumInput,idInput,firstNameInput,lastNameInput,emailInput,creditInput,programInput,levelInput, absenceNum, dateOfAbsence);
+		newNode = new Node<T>(recordNumInput,idInput,firstNameInput,lastNameInput,emailInput,creditInput,programInput,levelInput, absenceNum);
 
 		if (newNode == nullptr) {
 			return false;

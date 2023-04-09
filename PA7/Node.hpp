@@ -23,7 +23,7 @@ public:
 		pNext = nullptr;
 	}
 
-	Node(int recordNumInput, int idInput, string& firstNameInput, string& lastNameInput, string& emailInput, string& creditInput, string& programInput, string& levelInput, int absenceNum, string& dateOfAbsence) {
+	Node(int recordNumInput, int idInput, string& firstNameInput, string& lastNameInput, string& emailInput, string& creditInput, string& programInput, string& levelInput, int absenceNum) {
 
 		singleData.recordNum = recordNumInput;
 
@@ -41,7 +41,8 @@ public:
 
 		singleData.numOfAbsences = absenceNum;
 
-		singleData.AbsenceDates.push(dateOfAbsence);
+
+		//singleData.AbsenceDates.push(dateOfAbsence);
 
 		// singleData.AbsenceDates.push(dateOfAbsence); for testing
 

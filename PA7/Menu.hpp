@@ -114,7 +114,7 @@ public:
 				fieldIndex++;
 
 				if (fieldIndex == 8) {
-					absentLists.insertNode(recordNumInput, idInput, firstNameRef, lastNameRef, emailRef, creditRef, programRef, levelRef,numofAbsences = 0,dateRef = "");
+					absentLists.insertNode(recordNumInput, idInput, firstNameRef, lastNameRef, emailRef, creditRef, programRef, levelRef,numofAbsences = 0);
 				}
 
 			}
@@ -134,6 +134,130 @@ public:
 		//insert into recordList
 
 		// then loop
+
+	}
+
+	void loadMasterList(void) {
+
+		//read from master.csv to nodes
+
+		mFile.open("master.csv");
+		string line;
+
+		int recordNumInput;
+		int idInput;
+		string firstNameInput;
+		string lastNameInput;
+		string emailInput;
+		string creditInput;
+		string programInput;
+		string levelInput;
+		string absentDate;
+
+		int numofAbsences;
+
+
+		string& firstNameRef = firstNameInput;
+		string& lastNameRef = lastNameInput;
+		string& emailRef = emailInput;
+		string& creditRef = creditInput;
+		string& programRef = programInput;
+		string& levelRef = levelInput;
+		string& dateRef = absentDate;
+
+		while (getline(mFile, line)) {
+
+			string temp;
+			stringstream ss(line);
+			int fieldIndex = 0;
+
+			while (getline(ss, temp, ',')) {
+
+
+				switch (fieldIndex) {
+
+				case 0:
+					//record num
+					recordNumInput = stoi(temp);
+					break;
+
+				case 1:
+					//ID
+					idInput = stoi(temp);
+					break;
+
+				case 2:
+					//last name
+					temp = temp.substr(1, temp.length());    //substr(position, up to how long you want)
+					lastNameInput = temp;
+					break;
+
+				case 3:
+					//first name
+					temp = temp.substr(0, temp.length() - 1);
+					firstNameInput = temp;
+					break;
+
+				case 4:
+					//email
+					emailInput = temp;
+
+					break;
+
+				case 5:
+					//credits
+					creditInput = temp;
+
+					break;
+
+				case 6:
+					//program
+					programInput = temp;
+					break;
+
+				case 7:
+					//level
+					levelInput = temp;
+					break;
+
+				case 8:
+					//num of absences
+					numofAbsences = stoi(temp);
+					absentLists.insertNode(recordNumInput, idInput, firstNameRef, lastNameRef, emailRef, creditRef, programRef, levelRef, numofAbsences);
+					break;
+
+				case 9:
+					absentDate = temp;
+					absentLists.pHead->getData()->AbsenceDates.push(absentDate);
+					numofAbsences++;
+
+					while (getline(ss, temp, ',')) {
+						absentDate = temp;
+						
+						absentLists.pHead->getData()->AbsenceDates.push(absentDate);
+						numofAbsences++;
+					}
+
+					absentLists.pHead->getData()->numOfAbsences = numofAbsences;
+
+					break;
+
+				default:
+					
+					break;
+
+				}
+
+				fieldIndex++;
+
+				/*if (fieldIndex == 8) {
+					absentLists.insertNode(recordNumInput, idInput, firstNameRef, lastNameRef, emailRef, creditRef, programRef, levelRef, numofAbsences = 0, dateRef = "");
+				}*/
+
+			}
+
+
+		}
 
 	}
 
@@ -216,6 +340,8 @@ public:
 	void editAbsence(void) {
 		//BONUS
 
+
+
 	}
 
 	void generateReport(void) {
@@ -277,7 +403,11 @@ public:
 
 	}
 
-
+	void exit(void) {
+		system("cls");
+		cout << "App Closing..." << endl;
+		return;
+	}
 
 private:
 

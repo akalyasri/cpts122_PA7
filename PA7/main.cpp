@@ -38,10 +38,11 @@ int main(void) {
 
 	Menu App;
 
-	App.readCourseList();
-	App.storeMasterList();
+	//App.readCourseList();
+	//App.storeMasterList();
 	//App.markAbsences();
-	App.generateReport();
+	//App.generateReport();
+	App.loadMasterList();
 	
 
 }
