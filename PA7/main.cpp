@@ -7,7 +7,8 @@ int main(void) {
 	//int recordNumInput, int idInput, string& nameInput, string& emailInput, string creditInput, string& programInput, string& levelInput, int absenceNum, string& dateOfAbsence
 	//List<Data> absentLists;
 
-	
+	int menuInput = 0;
+
 	/*
 	int recordNumInput = 1; 
 	int idInput = 032;
@@ -38,11 +39,111 @@ int main(void) {
 
 	Menu App;
 
-	//App.readCourseList();
-	//App.storeMasterList();
-	//App.markAbsences();
-	//App.generateReport();
-	App.loadMasterList();
+	App.printMenu();
+	cin >> menuInput;
+
+	while (menuInput != 7) {
+
+
+		switch (menuInput) {
+
+		case 1:
+			system("cls");
+
+			App.readCourseList();
+			cout <<endl<< "Read course list." << endl;
+
+			system("pause");
+			system("cls");
+
+			App.printMenu();
+			cin >> menuInput;
+
+			break;
+		
+		case 2:
+			system("cls");
+
+			App.loadMasterList();
+			cout << "Loaded master list" << endl;
+
+			system("pause");
+			system("cls");
+
+			App.printMenu();
+			cin >> menuInput;
+
+			break;
+
+		case 3:
+			system("cls");
+
+			App.storeMasterList();
+			cout << "Stored master list." << endl;
+
+			system("pause");
+			system("cls");
+
+			App.printMenu();
+			cin >> menuInput;
+			break;
+
+		case 4:
+			system("cls");
+
+			App.markAbsences();
+
+			system("pause");
+			system("cls");
+
+			App.printMenu();
+			cin >> menuInput;
+			break;
+
+		case 5:
+			system("cls");
+
+			App.editAbsence();
+
+			system("pause");
+			system("cls");
+
+			App.printMenu();
+			cin >> menuInput;
+			break;
+		
+		case 6:
+			system("cls");
+
+			App.generateReport();
+
+			system("pause");
+			system("cls");
+
+			App.printMenu();
+			cin >> menuInput;
+			break;
+
+		default:
+			system("cls");
+
+			cout << "Invalid Input. Try again" << endl;
+			system("pause");
+			system("cls");
+
+			App.printMenu();
+			cin >> menuInput;
+			break;
+		}
+	}
+
+	if (menuInput == 7) {
+		
+		App.exit();
+		return 0;
+			
+	}
+	
 	
 
 }

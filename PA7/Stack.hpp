@@ -34,15 +34,21 @@ public:
 
 		//get top of stack without deleting - the top is now the back of a vector
 
+		if (dates.empty()) {
+			return "";
+		}
+
 		return dates.back();
 
 	}
 
-	string pop(void) {
+	void pop(int index) {
 		
 		// deleteing pTop from stack and returning
 
-		dates.pop_back(); //removes the last element of a stack
+		dates.erase(dates.begin() + index); // deletes specifc date
+		
+		dates.pop_back();//removes the last element of a stack
 
 		// dates.erase(dates.begin()); // removes the first element of a stack
 

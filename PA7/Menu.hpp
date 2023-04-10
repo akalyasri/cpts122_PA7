@@ -19,6 +19,22 @@ public:
 
 	}
 
+	void printMenu(void) {
+		cout << "*********    MENU    *********" << endl;
+		cout << "*                            *" << endl;
+		cout << "*  1. Import Course List     *" << endl;
+		cout << "*  2. Load Master List       *" << endl;
+		cout << "*  3. Store Master List      *" << endl;
+		cout << "*  4. Mark Absences          *" << endl;
+		cout << "*  5. Edit Absences          *" << endl;
+		cout << "*  6. Generate Report        *" << endl;
+		cout << "*  7. Exit                   *" << endl;
+		cout << "*                            *" << endl;
+		cout << "******************************" << endl << endl << endl;
+
+
+		cout << "Enter your choice: " << endl;
+	}
 
 	void readCourseList(void) {
 
@@ -340,6 +356,162 @@ public:
 	void editAbsence(void) {
 		//BONUS
 
+		// ask for name or ID
+
+		cout << "OPTIONS FOR SEARCHING STUDENT:" << endl << endl;
+		cout << "1. Search by name" << endl;
+		cout << "2. Search by ID" << endl << endl;
+
+		int userInput = 0;
+		int idInput = 0;
+		string firstNameInput;
+		string lastNameInput;
+
+		int deleteInput = 0;
+		int vectorIndex = 0;
+		
+		Node<Data>* pCur = absentLists.pHead;
+
+
+		cin >> userInput;
+
+		switch(userInput){
+
+		case 1:
+
+			cout << "Enter a first and last name (ex: Joe Smith)" << endl;
+
+			cin >> firstNameInput >> lastNameInput;
+
+			while (pCur != nullptr) {
+
+				//locate node
+				if (pCur->getData()->firstName == firstNameInput && pCur->getData()->lastName == lastNameInput) {
+
+					//print all absent dates from that specific node's stack
+					for (auto dates : pCur->getData()->AbsenceDates.getDates()) {
+
+						//ask if user wants to edit that date
+						if (dates != "") {
+							system("cls");
+							cout << "Would you like to delete this absence : " << dates << " ?" << endl << endl;
+							cout << "Enter 1 for yes and 0 for no" << endl;
+							cin >> deleteInput;
+
+							switch (deleteInput) {
+
+							case 0:
+								//if no, skip to next date
+								system("cls");
+								break;
+
+
+							case 1:
+								//if yes, remove date and numofAbsensces - 1
+
+								pCur->getData()->AbsenceDates.pop(vectorIndex);
+
+								pCur->getData()->numOfAbsences--;
+								break;
+
+						
+
+							default:
+								cout << endl << "Invalid Input." << endl;
+								break;
+
+							}
+
+
+						}
+
+						vectorIndex++;
+					}
+
+
+				}
+
+				pCur = pCur->getpNext();
+
+			}
+
+
+
+			break;
+
+		case 2:
+
+			cout << "Enter a student ID: " << endl;
+			cin >> idInput;
+
+			while (pCur != nullptr) {
+
+				if (pCur->getData()->ID == idInput) {
+
+					// iterate through the vector
+
+					for (auto dates : pCur->getData()->AbsenceDates.getDates()) {
+						if (dates != "") {
+
+							cout << "Would you like to delete this absence : " << dates << " ?" << endl << endl;
+							cout << "Enter 1 for yes and 0 for no" << endl;
+							cin >> deleteInput;
+
+							switch (deleteInput) {
+
+							case 0:
+								//if no, skip to next date
+								system("cls");
+								break;
+
+							case 1:
+								//if yes, remove date and numofAbsensces - 1
+
+								pCur->getData()->AbsenceDates.pop(vectorIndex);
+
+								pCur->getData()->numOfAbsences--;
+								break;
+
+							
+
+							default:
+								cout << endl << "Invalid Input." << endl;
+								break;
+
+							}
+						}
+
+						vectorIndex++;
+					}
+
+
+				}
+
+				pCur = pCur->getpNext();
+			}
+
+
+			break;
+
+		default:
+			cout << endl << "Invalid Input." << endl;
+			break;
+
+		}
+
+
+		
+		
+		
+
+		
+
+		
+
+		
+
+
+
 
 
 	}
@@ -354,8 +526,14 @@ public:
 
 		int userInput = 0;
 		int reportNum = 0;
+		int printedAbsences = 0;
 
 		Node<Data>* pCur = absentLists.pHead;
+
+		if (pCur == nullptr) {
+			cout << "Nothing to report. List empty." << endl;
+			return;
+		}
 
 		cin >> userInput;
 
@@ -384,16 +562,25 @@ public:
 
 			cin >> reportNum;
 
+
+
 			while (pCur != nullptr) {
 
 				if (pCur->getData()->numOfAbsences >= reportNum) {
 
 					cout << pCur->getData()->firstName << " " << pCur->getData()->lastName << " : " << pCur->getData()->AbsenceDates.peek() << endl;
-
+					
+					printedAbsences++;
 				}
+				
 				pCur = pCur->getpNext();
 			}
 			
+			if (printedAbsences == 0) {
+				system("cls");
+				cout << "Nothing to report. No student has or exceeded " << reportNum << " absence(s)." << endl;
+			}
+
 			break;
 		
 		default:
