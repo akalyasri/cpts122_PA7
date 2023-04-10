@@ -48,7 +48,7 @@ public:
 
 		dates.erase(dates.begin() + index); // deletes specifc date
 		
-		dates.pop_back();//removes the last element of a stack
+		//dates.pop_back();//removes the last element of a stack
 
 		// dates.erase(dates.begin()); // removes the first element of a stack
 

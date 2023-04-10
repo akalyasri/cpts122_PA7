@@ -36,6 +36,7 @@ public:
 		cout << "Enter your choice: " << endl;
 	}
 
+
 	void readCourseList(void) {
 
 		clFile.open("classList.csv");
@@ -152,6 +153,7 @@ public:
 		// then loop
 
 	}
+
 
 	void loadMasterList(void) {
 
@@ -314,6 +316,7 @@ public:
 
 
 	}
+
 
 	void markAbsences(void) {
 
