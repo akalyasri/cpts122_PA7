@@ -141,7 +141,7 @@ public:
 
 		
 
-			
+		clFile.close();
 		//record Number,ID,Name,Email,Units,Program,Level
 
 		//create node
@@ -276,14 +276,18 @@ public:
 
 
 		}
-
+		mFile.close();
 	}
 
 	
 	void storeMasterList(void) {
 
+		
 		mFile.open("master.csv", std::ios::out);
 
+		if (!mFile) {
+			cout << "Error opening file." << endl;
+		}
 
 		Node<Data>* pCur = absentLists.pHead;
 
@@ -314,6 +318,7 @@ public:
 			pCur = pCur->getpNext();
 		}
 
+		mFile.close();
 
 	}
 

@@ -38,6 +38,9 @@ int main(void) {
 	*/
 
 	Menu App;
+	fstream clFile;
+	fstream mFile;
+
 
 	App.printMenu();
 	cin >> menuInput;
@@ -136,7 +139,7 @@ int main(void) {
 			break;
 		}
 	}
-
+	
 	if (menuInput == 7) {
 		
 		App.exit();
@@ -144,6 +147,8 @@ int main(void) {
 			
 	}
 	
+
+
 	
 
 }
